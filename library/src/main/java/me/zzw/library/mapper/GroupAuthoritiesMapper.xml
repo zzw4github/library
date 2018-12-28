@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.dao.GroupAuthoritiesMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.pojo.GroupAuthorities">
+<mapper namespace="me.zzw.library.dao.GroupAuthoritiesMapper">
+  <resultMap id="BaseResultMap" type="me.zzw.library.pojo.GroupAuthorities">
     <result column="group_id" jdbcType="BIGINT" property="groupId" />
     <result column="authority" jdbcType="VARCHAR" property="authority" />
     <result column="id" jdbcType="INTEGER" property="id" />
   </resultMap>
-  <insert id="insert" parameterType="com.example.demo.pojo.GroupAuthorities">
+  <insert id="insert" parameterType="me.zzw.library.pojo.GroupAuthorities">
     insert into group_authorities (group_id, authority, id
       )
     values (#{groupId,jdbcType=BIGINT}, #{authority,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.pojo.GroupAuthorities">
+  <insert id="insertSelective" parameterType="me.zzw.library.pojo.GroupAuthorities">
     insert into group_authorities
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="groupId != null">
