@@ -9,7 +9,6 @@ public class Login {
 	}
 
 	public String getPassword() {
-		// TODO Auto-generated method stub
 		return password;
 	}
 
