@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.GroupAuthoritiesMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.GroupAuthorities">
+    <result column="group_id" jdbcType="BIGINT" property="groupId" />
+    <result column="authority" jdbcType="VARCHAR" property="authority" />
+    <result column="id" jdbcType="INTEGER" property="id" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.pojo.GroupAuthorities">
+    insert into group_authorities (group_id, authority, id
+      )
+    values (#{groupId,jdbcType=BIGINT}, #{authority,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.pojo.GroupAuthorities">
+    insert into group_authorities
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="groupId != null">
+        group_id,
+      </if>
+      <if test="authority != null">
+        authority,
+      </if>
+      <if test="id != null">
+        id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="groupId != null">
+        #{groupId,jdbcType=BIGINT},
+      </if>
+      <if test="authority != null">
+        #{authority,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
