@@ -1,0 +1,43 @@
+logging:
+  level:
+    org:
+      hibernate: ERROR
+      springframework:
+        web: INFO
+    io:
+      lettuce: DEBUG
+    root: INFO
+mybatis:
+  mapper-locations: classpath:me/zzw/library/mapper/*.xml
+  type-aliases-package: me.zzw.library.pojo
+  
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: infosea
+    url: jdbc:mysql://localhost:3306/library?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
+    username: root
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 8
+    timeout: 1000
+  data:
+    elasticsearch:
+      cluster-name: library
+      cluster-nodes: 127.0.0.1:9300
+      repositories:
+        enable: true
+#  output:
+#    ansi:
+#      enabled: DETECT
+#debug: true
+
+

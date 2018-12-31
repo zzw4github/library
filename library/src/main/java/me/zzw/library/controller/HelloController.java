@@ -2,8 +2,10 @@ package me.zzw.library.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import me.zzw.library.pojo.Users;
 import me.zzw.library.service.HelloService;
 
 
@@ -16,6 +18,11 @@ public class HelloController {
 	public String hello() {
 		Integer x = helloService.save();
 		return "hello boot" +  x;
+	}
+	
+	@GetMapping("/query")
+	public @ResponseBody Users selectByID() {
+		return helloService.selectByID();
 	}
 
 }

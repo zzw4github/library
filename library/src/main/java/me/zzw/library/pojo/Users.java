@@ -1,7 +1,14 @@
 package me.zzw.library.pojo;
 
-public class Users {
-    private String username;
+import java.io.Serializable;
+
+public class Users implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private String username;
 
     private String password;
 

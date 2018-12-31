@@ -17,9 +17,14 @@ public class HelloServiceImpl implements HelloService{
 	public Integer save() {
 		Users users = new Users();
 		users.setEnabled(true);
-		users.setPassword("zhaoziwen");
-		users.setUsername("zhaoziwen");
+		users.setPassword("zhaoziwen1");
+		users.setUsername("zhaoziwen1");
 		return usersMapper.insert(users);
+		
+	}
+	
+	public Users selectByID() {
+		return usersMapper.selectByPrimaryKey("zhaoziwen1");
 		
 	}
 }
