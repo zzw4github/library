@@ -11,7 +11,7 @@ public class Users {
 	private String id;
 	@Field(type =FieldType.Text)
 	private String username;	
-	@Field(type =FieldType.Text)
+	@Field(type =FieldType.Text) 
 	private String password;
 	@Field(type =FieldType.Boolean)
 	private Boolean enabled;
