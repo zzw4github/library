@@ -1,11 +1,19 @@
 package me.zzw.library.pojo;
 
-public class Authorities {
+public class Authority {
+    private Integer id;
+
     private String username;
 
     private String authority;
 
-    private Integer id;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -21,13 +29,5 @@ public class Authorities {
 
     public void setAuthority(String authority) {
         this.authority = authority == null ? null : authority.trim();
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

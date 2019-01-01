@@ -6,6 +6,6 @@ import me.zzw.library.auth.pojo.Role;
 
 public interface RoleService {
 
-	List<Role> getRoles(Integer id);
+	List<Role> getRoles(String string);
 
 }

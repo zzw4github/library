@@ -16,6 +16,7 @@ import me.zzw.library.auth.dto.Login;
 import me.zzw.library.auth.service.LoginService;
 import me.zzw.library.auth.service.RoleService;
 
+
 //@Component
 public class CustomUserDetailsService2 implements UserDetailsService {
 	@Autowired
@@ -35,16 +36,17 @@ public class CustomUserDetailsService2 implements UserDetailsService {
 			throw new UsernameNotFoundException("用户名为空");
 		}
 
-		Login login = loginService.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("用户不存在"));
+//		Users users = loginService.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("用户不存在"));
 
-		Set<GrantedAuthority> authorities = new HashSet<>();
-		roleService.getRoles(login.getId()).forEach(r -> authorities.add(new SimpleGrantedAuthority(r.getName())));
-
-		return new org.springframework.security.core.userdetails.User(username, login.getPassword(), true, // 是否可用
-				true, // 是否过期
-				true, // 证书不过期为true
-				true, // 账户未锁定为true
-				authorities);
+//		Set<GrantedAuthority> authorities = new HashSet<>();
+//		roleService.getRoles(users.getUsername()).forEach(r -> authorities.add(new SimpleGrantedAuthority(r.getName())));
+//
+//		return new org.springframework.security.core.userdetails.User(username, users.getPassword(), true, // 是否可用
+//				true, // 是否过期
+//				true, // 证书不过期为true
+//				true, // 账户未锁定为true
+//				authorities);
+		return null;
 	}
 
 }

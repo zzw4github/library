@@ -1,17 +1,17 @@
 package me.zzw.library.pojo;
 
-public class GroupMembers {
-    private Long id;
+public class RoleUser {
+    private Integer id;
 
     private String username;
 
-    private Long groupId;
+    private Integer roleId;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -23,11 +23,11 @@ public class GroupMembers {
         this.username = username == null ? null : username.trim();
     }
 
-    public Long getGroupId() {
-        return groupId;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setGroupId(Long groupId) {
-        this.groupId = groupId;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }

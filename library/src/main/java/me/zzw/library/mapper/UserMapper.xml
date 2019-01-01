@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="me.zzw.library.dao.UsersMapper">
-  <resultMap id="BaseResultMap" type="me.zzw.library.pojo.Users">
+<mapper namespace="me.zzw.library.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="me.zzw.library.pojo.User">
     <id column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="enabled" jdbcType="BIT" property="enabled" />
@@ -12,21 +12,21 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from users
+    from user
     where username = #{username,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from users
+    delete from user
     where username = #{username,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="me.zzw.library.pojo.Users">
-    insert into users (username, password, enabled
+  <insert id="insert" parameterType="me.zzw.library.pojo.User">
+    insert into user (username, password, enabled
       )
     values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{enabled,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="me.zzw.library.pojo.Users">
-    insert into users
+  <insert id="insertSelective" parameterType="me.zzw.library.pojo.User">
+    insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="username != null">
         username,
@@ -50,8 +50,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="me.zzw.library.pojo.Users">
-    update users
+  <update id="updateByPrimaryKeySelective" parameterType="me.zzw.library.pojo.User">
+    update user
     <set>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
@@ -62,8 +62,8 @@
     </set>
     where username = #{username,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="me.zzw.library.pojo.Users">
-    update users
+  <update id="updateByPrimaryKey" parameterType="me.zzw.library.pojo.User">
+    update user
     set password = #{password,jdbcType=VARCHAR},
       enabled = #{enabled,jdbcType=BIT}
     where username = #{username,jdbcType=VARCHAR}

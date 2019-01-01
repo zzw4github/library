@@ -3,8 +3,7 @@ package me.zzw.library.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import me.zzw.library.dao.UsersMapper;
-import me.zzw.library.pojo.Users;
+
 import me.zzw.library.service.HelloService;
 
 
@@ -12,19 +11,21 @@ import me.zzw.library.service.HelloService;
 @Service
 public class HelloServiceImpl implements HelloService{
 	@Autowired
-	UsersMapper usersMapper;
+//	UsersMapper usersMapper;
 	
 	public Integer save() {
-		Users users = new Users();
-		users.setEnabled(true);
-		users.setPassword("zhaoziwen1");
-		users.setUsername("zhaoziwen1");
-		return usersMapper.insert(users);
+//		Users users = new Users();
+//		users.setEnabled(true);
+//		users.setPassword("zhaoziwen1");
+//		users.setUsername("zhaoziwen1");
+//		return usersMapper.insert(users);
+		return 1;
 		
 	}
 	
-	public Users selectByID() {
-		return usersMapper.selectByPrimaryKey("zhaoziwen1");
+//	public Users selectByID() {
+//		return usersMapper.selectByPrimaryKey("zhaoziwen1");
+//		return null;
 		
-	}
+//	}
 }

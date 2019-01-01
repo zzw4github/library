@@ -1,8 +1,26 @@
-配置logback
+##### 配置logback
 
 https://www.cnblogs.com/lixuwu/p/5804793.html
 
-nginx
+http://nginx.org/en/docs/beginners_guide.html
+
+##### nginx
+
+https://www.cnblogs.com/eggplantpro/p/7445795.html
+
+nginx.exe 以服务的方式启动？
+
+it is likely not .
+
+怎么启动了两个nginx进程，跟配置的代理服务器有关吗？
+
+no , there is a master process
+
+upstream 负载均衡 proxy-servers 不能用_ tomcat9 报错
+
+location 是反向代理吗？
+
+怎么不用配 location ~ \.jsp$ 也能访问jsp文件？
 
 upstream proxy-servers {
 ​		server localhost:8080;

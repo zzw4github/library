@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import me.zzw.library.pojo.Users;
+
 import me.zzw.library.service.HelloService;
 
 
@@ -20,9 +20,9 @@ public class HelloController {
 		return "hello boot" +  x;
 	}
 	
-	@GetMapping("/query")
-	public @ResponseBody Users selectByID() {
-		return helloService.selectByID();
-	}
+//	@GetMapping("/query")
+//	public @ResponseBody Users selectByID() {
+//		return helloService.selectByID();
+//	}
 
 }

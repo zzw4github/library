@@ -4,8 +4,9 @@ import java.util.Optional;
 
 import me.zzw.library.auth.dto.Login;
 
+
 public interface LoginService {
 
-	Optional<Login> findByUsername(String username);
+//	Optional<Users> findByUsername(String username);
 
 }
