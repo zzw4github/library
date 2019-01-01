@@ -4,6 +4,28 @@ https://www.cnblogs.com/lixuwu/p/5804793.html
 
 nginx
 
+upstream proxy-servers {
+​		server localhost:8080;
+​		server localhost:8081;
+​	}
+​    server {
+​        listen       8082;
+​        server_name  localhost;
+
+        #charset koi8-r;
+    
+        #access_log  logs/host.access.log  main;
+    
+        location / {
+            # root   html;
+            # index  index.html index.htm;
+            proxy_pass http://proxy-servers/examples/;
+           
+        }
+        location /examples/ { 
+        proxy_pass http://proxy-servers/examples/;
+        proxy_redirect default;
+        } 
 redis 
 
  https://www.cnblogs.com/gdpuzxs/p/7222309.html
